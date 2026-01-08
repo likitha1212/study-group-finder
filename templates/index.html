@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Study Groups</h2>
+
+<div class="grid">
+{% for g in groups %}
+    <div class="card">
+        <h3>{{ g[1] }}</h3>
+        <p>{{ g[2] }}</p>
+        <a href="/group/{{ g[0] }}">Join Chat</a>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

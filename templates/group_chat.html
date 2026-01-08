@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+
+<h2>Group Chat</h2>
+<div id="messages"></div>
+
+<input id="msg">
+<button onclick="send()">Send</button>
+
+<script>
+const socket = io();
+const room = "{{ group_id }}";
+const user = "{{ user }}";
+
+socket.emit("join", {room: room});
+
+function send(){
+    let msg = document.getElementById("msg").value;
+    socket.emit("send_message",{room:room,user:user,message:msg});
+}
+
+socket.on("receive_message", data=>{
+    document.getElementById("messages").innerHTML +=
+    `<p><b>${data.user}:</b> ${data.message}</p>`;
+});
+</script>
+
+</body>
+</html>
