@@ -58,3 +58,14 @@ python app.py
 
 Open browser:
 👉 http://127.0.0.1:5000
+
+Deployment
+
+The application is deployed using Render Web Services with automatic redeployment on every GitHub push.
+
+👩‍💻 Author
+
+Pusarla Likitha
+B.Tech Student | Aspiring Full-Stack Developer
+
+⭐ If you like this project, feel free to star the repository!
